@@ -1,0 +1,33 @@
+package aulas.aula0310.aula1710;
+
+public class CartãoDeCredito extends MeioDePagamento{
+    private String numeroCartao;
+    private int parcelas;
+
+    public CartãoDeCredito(double valor, String numeroCartao, int parcelas) {
+        super(valor);
+        this.numeroCartao = numeroCartao;
+        this.parcelas = parcelas;  
+    }
+
+    @Override
+    public boolean processarPagamento() {
+        System.out.println("\n--- Processando Pagamento com cartão de Crédito ---");
+        exibirDetalhes();
+        System.out.println("Final: " + this.numeroCartao.substring(this.numeroCartao.length() - 4));
+        System.out.println("Parcelas: " + this.parcelas + "x");
+        
+        if (this.valor > 0 && this.parcelas > 0) {
+            System.out.println("Transação autorizada: ");
+            return true;
+        } else{
+            System.out.println("Transação autorizada: ");
+            return false;
+        }
+        
+    }
+
+
+ }
+
+

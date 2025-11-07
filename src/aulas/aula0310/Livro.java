@@ -22,5 +22,16 @@ private int tiragem;
         this.tiragem = tiragem;
     }
 
+    @Override
+    public boolean aplicarDesconto(double porcentagem){
+        if (porcentagem > 0.5) {
+            return false;
+        }
+        double desconto = super.getValor() * porcentagem;
+        super.setValor(super.getValor() - desconto);
+        return true;
+    }
+        
+
 
 }
